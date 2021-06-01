@@ -20,7 +20,7 @@ RUN wget https://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.deb && dpkg -
 # See : https://github.com/theia-ide/theia-apps/issues/34
 RUN adduser --disabled-password --gecos '' theia
 RUN chmod g+rw /home && \
-    mkdir -p /home/project && \
+    mkdir -p /home/project/SparkScalaDemo && \
     chown -R theia:theia /home/theia && \
     chown -R theia:theia /home/project;
 WORKDIR /home/theia
@@ -37,13 +37,8 @@ ENV SHELL=/bin/bash \
     THEIA_DEFAULT_PLUGINS=local-dir:/home/theia/plugins
 
 USER root
-COPY src/ /root/dockerstartup/
-RUN chmod +x /root/dockerstartup/*.sh
 
-RUN mkdir -p /home/project/SparkScalaDemo
 COPY SparkScalaDemo/ /home/project/SparkScalaDemo
+RUN mvn package -f /home/project/SparkScalaDemo/pom.xml
 
-WORKDIR /home/project/SparkScalaDemo
-RUN mvn package
-
-ENTRYPOINT ["/root/dockerstartup/startup.sh"]
+ENTRYPOINT ["yarn","theia","start","/home/project/SparkScalaDemo","--hostname=0.0.0.0"]

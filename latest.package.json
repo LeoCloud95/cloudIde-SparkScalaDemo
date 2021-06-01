@@ -95,7 +95,9 @@
         "vscode-java-debug": "https://github.com/microsoft/vscode-java-debug/releases/download/0.24.0/vscjava.vscode-java-debug-0.24.0.vsix",
         "vscode-java-test": "https://github.com/microsoft/vscode-java-test/releases/download/0.22.0/vscjava.vscode-java-test-0.22.0.vsix",
         "vscode-scala":"https://open-vsx.org/api/scala-lang/scala/0.4.2/file/scala-lang.scala-0.4.2.vsix",
-        "vscode-java-dependency-viewer": "https://github.com/microsoft/vscode-java-dependency/releases/download/0.6.0/vscode-java-dependency-0.6.0.vsix"
+        "vscode-java-dependency-viewer": "https://github.com/microsoft/vscode-java-dependency/releases/download/0.6.0/vscode-java-dependency-0.6.0.vsix",
+        "vscode-code-runner": "https://github.com/formulahendry/vscode-code-runner/releases/download/0.9.17/code-runner-0.9.17.vsix",
+        "vscode-scalameta":"https://open-vsx.org/api/scalameta/metals/1.9.3/file/scalameta.metals-1.9.3.vsix"
     },
     "devDependencies": {
         "@theia/cli": "latest"
